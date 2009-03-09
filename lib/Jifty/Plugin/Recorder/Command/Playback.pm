@@ -8,7 +8,7 @@ package Jifty::Script::Playback;
 use strict;
 use warnings;
 
-use base qw/App::CLI::Command/;
+use base qw/Jifty::Script/;
 use Time::HiRes 'sleep';
 use Storable 'thaw';
 
