@@ -92,7 +92,7 @@ sub before_request
 {
     my $self    = shift;
     my $handler = shift;
-    my $cgi     = shift;
+    my $req     = shift;
 
     $self->logged_request(0);
     $self->request_time(time);
@@ -101,7 +101,7 @@ sub before_request
         my $delta = $self->request_time - $self->start;
 
         my $request = {
-            cgi   => nfreeze($cgi),
+            req   => nfreeze($req),
             ENV   => \%ENV,
             time  => $delta,
             start => $self->request_time,
